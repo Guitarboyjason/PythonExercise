@@ -19,5 +19,4 @@ def max_score(num, stairs,cnt):
         else:
             return stairs[num-1] + max(max_score(num+1,stairs,cnt+1),max_score(num+2,stairs,cnt))
 
-print(stairs)
 print(max_score(1,stairs,cnt))
