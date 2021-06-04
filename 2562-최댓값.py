@@ -4,4 +4,4 @@ for _ in range(9):
 print(max(arr))
 for i in range(9):
     if arr[i] == max(arr):
-        print(i)
+        print(i+1)

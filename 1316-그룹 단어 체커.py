@@ -1,10 +1,14 @@
 arr = []
 cnt = 0
 def finder(word):
+    length = len(word)
     if len(arr) == 0:
-        arr.append(word[0])
-        return(finder(word[1:]))
-    if len(word) == 1 :
+        if len(word) != 1:
+            arr.append(word[0])
+            return(finder(word[1:]))
+        else:
+            return 1
+    elif length == 1 :
         if word == arr[-1]:
             return 1
         elif word not in arr:

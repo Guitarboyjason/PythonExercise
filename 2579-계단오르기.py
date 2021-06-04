@@ -1,22 +1,23 @@
 n = int(input())
-stairs = []
-max_discount = -100000
+stairs = [0]
 for _ in range(n):
     stairs.append(int(input()))
-    
+scores = [0]*(n+1)
 cnt = 0
-def max_score(num, stairs,cnt):
-    if num == n:
-        return stairs[num-1]
-    if num > n:
-        return max_discount
+def max_score(num,cnt):
+    if num == 1:
+        scores[num] = stairs[num]
+        return scores[num]
     else:
-        if num ==1:
-            return stairs[num-1] + max(max_score(num+1,stairs,cnt),max_score(num+2,stairs,cnt))
         if cnt == 1:
-            cnt=0
-            return max_score(num+2,stairs,cnt)
+            scores[num] = stairs[num] + scores[num-2]
+            return scores[num]
         else:
-            return stairs[num-1] + max(max_score(num+1,stairs,cnt+1),max_score(num+2,stairs,cnt))
-
-print(max_score(1,stairs,cnt))
+            if num>2:
+                scores[num] = stairs + max(max_score(num-1,1),max_score(num-2,0))
+                return scores[num]
+            else:
+                scores[num] = stairs[num] + max_score(num-1,
+                
+                    
+print(max_score(n,cnt))
