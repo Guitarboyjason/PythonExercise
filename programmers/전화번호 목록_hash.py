@@ -19,9 +19,9 @@ def hash(phone_book):
         hash_arr[int(i[0])].append(i)
     print(hash_arr)
     return hash_arr
-# def sort(hash_arr):
-#     for i in hash_arr:
-#         if i != []:
-#             for j in i:
-#                 break
+def sort(hash_arr):
+    for i in hash_arr:
+        if i != []:
+            for j in i:
+                break
 print(solution(phone_book))
